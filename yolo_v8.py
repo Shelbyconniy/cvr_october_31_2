@@ -26,8 +26,7 @@ while True:
         for box in boxes:
             b = box.xyxy[0]  # get box coordinates in (top, left, bottom, right) format
             c = box.cls
-            if model.names[int(c)] == 'person':
-                annotator.box_label(b, model.names[int(c)])
+            annotator.box_label(b, model.names[int(c)])
 
     img = annotator.result()
     cv2.imshow('YOLO V8 Detection', img)
